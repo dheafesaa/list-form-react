@@ -1,0 +1,33 @@
+button {
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px 15px;
+  color: black;
+  border: none;
+}
+
+h2 {
+  color: #81c4de;
+}
+
+.flex-box-2 {
+  float: right;
+}
+
+.btn-edit {
+  background-color: #81c4de;
+}
+
+.btn-delete {
+  background-color: #d86969;
+  color: white;
+}
+
+button:focus {
+  outline: none;
+}
+
+.btn-delete:hover {
+  cursor: pointer;
+  background-color: #a73737;
+}

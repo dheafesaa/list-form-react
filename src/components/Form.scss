@@ -1,0 +1,42 @@
+.container {
+  margin: auto;
+  width: 65%;
+  margin-top: 20px;
+  border-radius: 15px;
+  background-color: #f6f6f6;
+  padding: 20px;
+  text-align: center;
+}
+
+.input-data {
+  display: flex;
+  width: 100%;
+  padding: 12px 10px;
+  margin: 8px 0px;
+  box-sizing: border-box;
+  border: 1px solid #81c4de;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+
+  &:focus {
+    border-color: #3788a7;
+  }
+}
+
+.button-sub {
+  width: 100%;
+  background-color: #81c4de;
+  padding: 10px 20px;
+  margin: 5px 0px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  border: 1px solid #3788a7;
+  cursor: pointer;
+  text-align: center;
+
+  &:active {
+    background-color: #3788a7;
+  }
+}
