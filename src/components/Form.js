@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './Form.scss';
+import "../scss/Form.scss";
 
 const AddList = (props) => {
   const initialFormState = {
@@ -26,7 +26,7 @@ const AddList = (props) => {
           return;
         }
 
-        props.addUser(list);
+        props.addList(list);
         setList(initialFormState);
       }}
     >

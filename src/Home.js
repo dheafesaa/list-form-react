@@ -5,19 +5,19 @@ import List from "./components/List";
 const Home = () => {
   const [lists, setLists] = useState("");
 
-  const addUser = (list) => {
+  const addList = (list) => {
     list.id = lists.length + 1;
     setLists([...lists, list]);
   };
-
-  // const deleteUser = (id) => {
-  //   setLists(lists.filter((list) => list.id !== id));
-  // };
+  
+   function deleteList(id){
+    setLists(lists.filter((list) => list.id !== id));
+  };
 
   return (
     <div>
-      <Form addUser={addUser} />
-      <List lists={lists}/>
+      <Form addList={addList} />
+      <List lists={lists} deleteList={deleteList}/>
     </div>
   );
 };
