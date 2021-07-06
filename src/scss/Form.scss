@@ -24,19 +24,46 @@
   }
 }
 
-.button-sub {
-  width: 100%;
-  background-color: #81c4de;
+.btn {
   padding: 10px 20px;
   margin: 5px 0px;
   border: none;
   border-radius: 6px;
   font-size: 15px;
-  border: 1px solid #3788a7;
   cursor: pointer;
   text-align: center;
+}
+
+.btn-submit,
+.btn-update {
+  background-color: #81c4de;
+  border: 1px solid #3788a7;
 
   &:active {
     background-color: #3788a7;
+  }
+}
+
+.btn-submit {
+  width: 100%;
+}
+
+.btn-update,
+.btn-cancel {
+  width: 45%;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+}
+
+.btn-cancel {
+  background-color: #d3d3d3;
+  border: 1px solid #a9a9a9;
+
+  &:active {
+    background-color: #a9a9a9;
   }
 }

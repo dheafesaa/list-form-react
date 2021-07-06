@@ -1,6 +1,6 @@
 import React from "react";
 import ListItem from "./ListItem";
-import DeleteItem from "./DeleteItem";
+import ActionItem from "./ActionItem";
 import "../scss/List.scss";
 
 const List = (props) => {
@@ -14,7 +14,11 @@ const List = (props) => {
               <tr>
                 <ListItem list={list} />
                 <td>
-                  <DeleteItem deleteList={props.deleteList} id={list.id} />
+                  <ActionItem
+                    deleteList={props.deleteList}
+                    list={list}
+                    editRow={props.editRow}
+                  />
                 </td>
               </tr>
             ))

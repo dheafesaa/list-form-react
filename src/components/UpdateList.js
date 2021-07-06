@@ -1,15 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../scss/Form.scss";
 
-const AddList = (props) => {
-  const initialFormState = {
-    id: null,
-    title: '',
-    quantity: '',
-    price: ''
-  };
+const UpdateList = (props) => {
+  const [list, setList] = useState(props.currentList);
 
-  const [list, setList] = useState(initialFormState);
+  useEffect(() => {
+    setList(props.currentList);
+  }, [props]);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -26,8 +23,7 @@ const AddList = (props) => {
           return;
         }
 
-        props.addList(list);
-        setList(initialFormState);
+        props.updateList(list.id, list);
       }}
     >
       <div className="container">
@@ -35,7 +31,6 @@ const AddList = (props) => {
           <input
             type="text"
             name="title"
-            placeholder="Title"
             value={list.title}
             onChange={handleInputChange}
             className="input-data"
@@ -47,7 +42,6 @@ const AddList = (props) => {
             type="number"
             min="0"
             name="quantity"
-            placeholder="Quantity"
             value={list.quantity}
             onChange={handleInputChange}
             className="input-data"
@@ -59,20 +53,18 @@ const AddList = (props) => {
             type="number"
             min="0"
             name="price"
-            placeholder="Price"
             value={list.price}
             onChange={handleInputChange}
             className="input-data"
           />
         </div>
-        <div>
-          <button className="btn btn-submit">
-            Submit
-          </button>
+        <div className="flex-container">
+          <button className="btn btn-update">Update</button>
+          <button onClick={() => props.setEditing(false)} className="btn btn-cancel">Cancel</button>
         </div>
       </div>
     </form>
   );
 };
 
-export default AddList;
+export default UpdateList;
