@@ -1,34 +1,26 @@
 import React from "react";
 import ListItem from "./ListItem";
-import ActionItem from "./ActionItem";
 import "../scss/List.scss";
 
 const List = (props) => {
+  const { lists, editRow, deleteList } = props;
+
   return (
     <div className="flex-large">
       <h1 style={{ color: "#81c4de" }}>List</h1>
-      <table>
-        <tbody>
-          {props.lists.length > 0 ? (
-            props.lists.map((list) => (
-              <tr>
-                <ListItem list={list} />
-                <td>
-                  <ActionItem
-                    deleteList={props.deleteList}
-                    list={list}
-                    editRow={props.editRow}
-                  />
-                </td>
-              </tr>
+      <div className="list-head">
+        <div className="list-body">
+          {lists.length > 0 ? (
+            lists.map((list) => (
+              <ListItem list={list} deleteList={deleteList} editRow={editRow} />
             ))
           ) : (
-            <tr>
-              <td>List is empty.</td>
-            </tr>
+            <div className="full-list">
+              <div className="list">List is empty.</div>
+            </div>
           )}
-        </tbody>
-      </table>
+        </div>
+      </div>
     </div>
   );
 };

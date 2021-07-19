@@ -3,7 +3,8 @@ html {
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font: normal normal normal 1rem/1.6 -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font: normal normal normal 1rem/1.6 -apple-system, BlinkMacSystemFont,
+    Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -13,10 +14,6 @@ body {
   font-size: 1rem;
 }
 
-h2 {
-  font-size: 1.5rem;
-}
-
 .flex-large {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -24,18 +21,33 @@ h2 {
   margin-bottom: 1rem;
 }
 
-table {
+.list-head {
+  display: table;
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
   max-width: 100%;
+  box-sizing: border-box;
+  text-indent: initial;
+  border-color: grey;
 }
 
-td {
-  border-bottom: 1px solid #dedede;
+.list-body {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
 }
 
-th, td {
+.full-list {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+.list {
   text-align: left;
   padding: 0.5rem;
+  border-bottom: 1px solid #dedede;
+  display: table-cell;
+  vertical-align: inherit;
 }

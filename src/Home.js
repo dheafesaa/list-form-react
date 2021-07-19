@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import Footer from "./components/Footer";
 import Form from "./components/Form";
+import Header from "./components/Header";
 import List from "./components/List";
-import UpdateList from "./components/UpdateList";
 
 const Home = () => {
   const initialFormState = {
@@ -22,7 +23,7 @@ const Home = () => {
 
   const deleteList = (id) => {
     setLists(lists.filter((list) => list.id !== id));
-  }
+  };
 
   const updateList = (id, updateList) => {
     setEditing(false);
@@ -37,27 +38,24 @@ const Home = () => {
       id: list.id,
       title: list.title,
       quantity: list.quantity,
-      price: list.price
+      price: list.price,
     });
   };
 
   return (
     <div>
-      {editing ? (
-        <>
-          <UpdateList
-            editing={editing}
-            setEditing={setEditing}
-            currentList={currentList}
-            updateList={updateList}
-          />
-        </>
-      ) : (
-        <>
-          <Form addList={addList} />
-        </>
-      )}
+      <Header />
+      <>
+        <Form
+          addList={addList}
+          editing={editing}
+          setEditing={setEditing}
+          currentList={currentList}
+          updateList={updateList}
+        />
+      </>
       <List lists={lists} deleteList={deleteList} editRow={editRow} />
+      <Footer />
     </div>
   );
 };
