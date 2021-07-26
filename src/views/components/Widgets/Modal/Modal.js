@@ -1,13 +1,13 @@
 import React from "react";
-import "../scss/Modal.scss";
+import "./Modal.scss";
 
 const Popup = (props) => {
   const { title, children } = props;
 
   return (
-    <div className="popup-box">
-      <div className="box">
-        <div className="content">
+    <div className="modal">
+      <div className="modal__box">
+        <div className="modal__content">
           <h3>{title}</h3>
           {children}
         </div>

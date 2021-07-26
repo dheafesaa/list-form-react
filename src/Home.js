@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Footer from "./components/Footer";
-import Form from "./components/Form";
-import Header from "./components/Header";
-import List from "./components/List";
+import Footer from "./views/components/Footer/Footer";
+import Form from "./views/containers/Home/Form/Form";
+import Header from "./views/components/Header/Header";
+import List from "./views/containers/Home/List/List";
 
 const Home = () => {
   const initialFormState = {

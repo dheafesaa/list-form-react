@@ -1,0 +1,36 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 1rem;
+
+  &__head {
+    display: flex;
+  }
+
+  &__title {
+    color: #81c4de;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;  
+  }
+
+  &__data {
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem;
+    border-bottom: 1px solid #dedede;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__empty {
+    display: flex;
+    border-bottom: 1px solid #dedede;
+  }
+}
+

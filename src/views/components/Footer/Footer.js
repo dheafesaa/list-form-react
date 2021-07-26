@@ -1,5 +1,5 @@
 import React from "react";
-import "../scss/Modal.scss";
+import "./Footer.scss";
 
 const Footer = () => {
   return (
@@ -9,4 +9,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Footer; 

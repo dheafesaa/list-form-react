@@ -1,0 +1,46 @@
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  border-bottom: 1px solid gray;
+  padding: 10px 5px;
+  inset: 0px;
+  cursor: pointer;
+
+  &__box {
+    position: relative;
+    background: rgb(255, 255, 255);
+    max-width: 90%;
+    min-width: 50%;
+    border-radius: 16px;
+    border: 1px solid rgb(187, 187, 187);
+    padding: 5px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+    background-color: #fefefe;
+    text-align: center;
+  
+  }
+}
+
+.closebtn {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: 6px;
+  top: 6px;
+  font-size: 24px;
+  color: white;
+  background: black;
+  border-radius: 18px;
+  border: 1px solid #cfcece;
+}

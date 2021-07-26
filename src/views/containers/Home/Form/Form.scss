@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  background-color: #f6f6f6;
+  width: 65%;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.input-data {
+  display: flex;
+  width: 100%;
+  padding: 12px 10px;
+  margin: 5px 0px;
+  box-sizing: border-box;
+  border: 1px solid #81c4de;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+  &:focus {
+    border-color: #3788a7;
+  }
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

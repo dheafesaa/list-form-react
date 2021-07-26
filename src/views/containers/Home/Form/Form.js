@@ -1,11 +1,27 @@
 import React, { useState, useEffect } from "react";
-import Popup from "./Modal";
-import "../scss/Form.scss";
+import Button from "../../../components/Widgets/Button/Button";
+import Popup from "../../../components/Widgets/Modal/Modal";
+import "./Form.scss";
 
 const Form = (props) => {
-  const { addList, currentList, updateList, editing, setEditing, togglePopup } = props;
+  const { addList, currentList, updateList, editing, setEditing, togglePopup } =props;
 
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    var obj = document.getElementsByClassName("popup-box")[0];
+    document.addEventListener("click", function (e) {
+      if (obj) {
+        if (obj.contains(e.target)) {
+          if (isOpen) {
+            setIsOpen(false);
+          }
+        } else {
+        }
+      }
+    });
+    return () => {};
+  }, [isOpen]);
 
   const initialFormState = {
     id: null,
@@ -38,6 +54,10 @@ const Form = (props) => {
 
     editing ? updateList(list.id, list) : addList(list);
     setList(initialFormState);
+  };
+
+  const handleReset = () => {
+    setEditing(initialFormState);
   };
 
   return (
@@ -77,19 +97,18 @@ const Form = (props) => {
         </div>
         {editing ? (
           <div className="flex-container">
-            <button className="btn btn-update">Update</button>
-            <button
-              onClick={() => setEditing(false)}
-              className="btn btn-cancel"
-            >
+            <Button color="BLUE" type="UPDATE">
+              Update
+            </Button>
+            <Button color="GREY" type="UPDATE" onClick={handleReset}>
               Cancel
-            </button>
+            </Button>
           </div>
         ) : (
           <div>
-            <button className="btn btn-submit" onClick={togglePopup}>
+            <Button color="BLUE" type="SUBMIT" onClick={togglePopup}>
               Submit
-            </button>
+            </Button>
             {isOpen && (
               <Popup title="Error!">
                 <>
@@ -97,7 +116,9 @@ const Form = (props) => {
                   <button className="closebtn" onClick={togglePopup}>
                     x
                   </button>
-                  <button className="btnErr">Oke</button>
+                  <Button color="CHERRY" type="OKE">
+                    Oke
+                  </Button>
                 </>
               </Popup>
             )}

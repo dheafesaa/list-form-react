@@ -1,0 +1,15 @@
+.list {
+  &__form { 
+    flex-direction: column;
+  }
+
+  &__action {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.action-box {
+  display: flex;
+  flex-direction: row;
+}
