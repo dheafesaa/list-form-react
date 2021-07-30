@@ -4,12 +4,12 @@ import Popup from "../../../components/Widgets/Modal/Modal";
 import "./Form.scss";
 
 const Form = (props) => {
-  const { addList, currentList, updateList, editing, setEditing, togglePopup } =props;
+  const { addList, currentList, updateList, editing, setEditing, togglePopup } = props;
 
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    var obj = document.getElementsByClassName("popup-box")[0];
+    var obj = document.getElementsByClassName("modal")[0];
     document.addEventListener("click", function (e) {
       if (obj) {
         if (obj.contains(e.target)) {
@@ -96,7 +96,7 @@ const Form = (props) => {
           />
         </div>
         {editing ? (
-          <div className="flex-container">
+          <div className="action-container">
             <Button color="BLUE" type="UPDATE">
               Update
             </Button>

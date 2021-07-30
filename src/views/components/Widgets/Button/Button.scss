@@ -1,89 +1,103 @@
+$white: #fff;
+$black: #000;
+$font-size: 20px;
+$border-radius: 5px;
+$padding: 10px 20px;
+
+$color: (
+  "red": #d86969,
+  "dark-red": #a73737,
+  "blue": #81c4de,
+  "dark-blue": #3788a7,
+  "grey": #d3d3d3,
+  "dark-grey": #a9a9a9,
+  "cherry": #f44336,
+  "light": #ccc,
+  "dark-light": #a9a9a9,
+);
+
 .btn {
   &-red {
-    background-color: #d86969;
-    color: white;
-    border: 1px solid #a73737;
-    &:hover {
-      background-color: #a73737;
+    background-color: map-get($color, "red");
+    color: $white;
+    &:active {
+      background-color: map-get($color, "dark-red");
     }
   }
 
   &-blue {
-    background-color: #81c4de;
-    color: black;
-    border: 1px solid #3788a7;
+    background-color: map-get($color, "blue");
+    color: $black;
     &:active {
-      background-color: #3788a7;
+      background-color: map-get($color, "dark-blue");
     }
   }
 
   &-grey {
-    background-color: #d3d3d3;
-    border: 1px solid #a9a9a9;
-    color: black;
+    background-color: map-get($color, "grey");
+    color: $black;
     &:active {
-      background-color: #a9a9a9;
+      background-color: map-get($color, "dark-grey");
     }
   }
 
   &-cherry {
-    background-color: #f44336;
-    color: white;
-    border: 1px solid #a73737;
-    &:hover {
-      background-color: #a73737;
+    background-color: map-get($color, "cherry");
+    color: $white;
+    &:active {
+      background-color: map-get($color, "dark-red");
     }
   }
 
   &-light {
-    background-color: #ccc;
-    border: 1px solid #a9a9a9;
-    color: black;
+    background-color: map-get($color, "light");
+    color: $black;
     &:active {
-      background-color: #a9a9a9;
+      background-color: map-get($color, "dark-light");
     }
   }
 }
 
-.btn {
-  &.form {
-    padding: 10px 20px;
-    margin: 5px 0px;
-    border-radius: 6px;
-    font-size: 15px;
-    cursor: pointer;
-    text-align: center;
-    outline: none;
+@mixin form {
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  margin: 5px 0px;
+  padding: $padding;
+  font-size: $font-size - 5px;
+  border-radius: $border-radius;
+}
 
-    &__submit {
-      width: 100%;
-    }
+@mixin button-pick {
+  border: none;
+  margin: 5px;
+  border-radius: $border-radius;
+}
 
-    &__update {
-      width: 45%;
-    }
-  }
+.submit {
+  @include form;
+  width: 100%;
+}
 
-  &.popup {
-    height: 50px;
-    font-size: 20px;
-    padding: 0px;
-    border-radius: 5px;
-    margin: 5px;
+.update {
+  @include form;
+  width: 45%;
+}
 
-    &__action {
-      width: 50%;
-    }
+.action {
+  @include button-pick;
+  width: 50%;
+  height: 50px;
+  font-size: $font-size;
+}
 
-    &__oke {
-      width: 100%;
-    }
-  }
+.oke {
+  @include button-pick;
+  height: 50px;
+  font-size: $font-size;
+}
 
-  &__choose {
-    border-radius: 5px;
-    margin: 5px;
-    padding: 10px 15px;
-    border: none;
-  }
+.choose {
+  @include button-pick;
+  padding: $padding;
 }

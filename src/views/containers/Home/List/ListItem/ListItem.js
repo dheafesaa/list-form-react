@@ -9,7 +9,7 @@ const ListItem = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    var obj = document.getElementsByClassName("popup-box")[0];
+    var obj = document.getElementsByClassName("modal")[0];
     document.addEventListener("click", function (e) {
       if (obj) {
         if (obj.contains(e.target)) {

@@ -13,11 +13,11 @@ const Button = (props) => {
   };
 
   const BUTTON_TYPE = {
-    SUBMIT: "btn form form__submit",
-    UPDATE: "btn form form__update",
-    ACTION: "btn popup popup__action",
-    OKE: "btn popup popup__oke",
-    CHOOSE: "btn btn__choose",
+    SUBMIT: "submit",
+    UPDATE: "update",
+    ACTION: "action",
+    OKE: "oke",
+    CHOOSE: "choose",
   };
 
   const colorClassName = BUTTON_COLOR[color];

@@ -1,30 +1,38 @@
-.container {
+$border-radius: 16px;
+$misty: #f6f6f6;
+$blue: #81c4de;
+$dark-blue: #3788a7;
+
+@mixin flex-form($flex-direction: column) {
   display: flex;
-  flex-direction: column;
+  flex-direction: $flex-direction;
+}
+
+.container {
+  @include flex-form;
   margin: auto;
-  background-color: #f6f6f6;
   width: 65%;
-  border-radius: 15px;
   padding: 20px;
+  border-radius: $border-radius;
+  background-color: $misty;
 }
 
 .input-data {
-  display: flex;
+  @include flex-form;
+  box-sizing: border-box;
+  outline: none;
   width: 100%;
   padding: 12px 10px;
   margin: 5px 0px;
-  box-sizing: border-box;
-  border: 1px solid #81c4de;
-  border-radius: 6px;
   font-size: 15px;
-  outline: none;
+  border: 1px solid $blue;
+  border-radius: $border-radius - 8px;
   &:focus {
-    border-color: #3788a7;
+    border-color: $dark-blue;
   }
 }
 
-.flex-container {
-  display: flex;
-  flex-direction: row;
+.action-container {
+  @include flex-form(row);
   justify-content: space-between;
 }
