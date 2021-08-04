@@ -1,38 +1,22 @@
-$border-radius: 16px;
-$misty: #f6f6f6;
-$blue: #81c4de;
-$dark-blue: #3788a7;
+@import "../../../../styles/variables";
 
 @mixin flex-form($flex-direction: column) {
   display: flex;
   flex-direction: $flex-direction;
 }
 
-.container {
-  @include flex-form;
-  margin: auto;
-  width: 65%;
-  padding: 20px;
-  border-radius: $border-radius;
-  background-color: $misty;
-}
-
-.input-data {
-  @include flex-form;
-  box-sizing: border-box;
-  outline: none;
-  width: 100%;
-  padding: 12px 10px;
-  margin: 5px 0px;
-  font-size: 15px;
-  border: 1px solid $blue;
-  border-radius: $border-radius - 8px;
-  &:focus {
-    border-color: $dark-blue;
+.form {
+  &__input {
+    @include flex-form;
+    margin: auto;
+    width: 65%;
+    padding: 20px;
+    border-radius: 16px;
+    background-color: $misty;
   }
-}
 
-.action-container {
-  @include flex-form(row);
-  justify-content: space-between;
+  &__update {
+    @include flex-form(row);
+    justify-content: space-between;
+  }
 }

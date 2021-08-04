@@ -4,6 +4,14 @@ import "./Button.scss";
 const Button = (props) => {
   const { color, type, onClick, children } = props;
 
+  const BUTTON_TYPE = {
+    SUBMIT: "btn btn-submit",
+    UPDATE: "btn btn-update",
+    ACTION: "btn btn-action",
+    OKE: "btn btn-oke",
+    CHOOSE: "btn btn-choose",
+  };
+
   const BUTTON_COLOR = {
     RED: "btn-red",
     BLUE: "btn-blue",
@@ -12,21 +20,13 @@ const Button = (props) => {
     LIGHT: "btn-light",
   };
 
-  const BUTTON_TYPE = {
-    SUBMIT: "submit",
-    UPDATE: "update",
-    ACTION: "action",
-    OKE: "oke",
-    CHOOSE: "choose",
-  };
-
-  const colorClassName = BUTTON_COLOR[color];
   const buttonClassName = BUTTON_TYPE[type];
+  const colorClassName = BUTTON_COLOR[color];
 
   return (
     <>
       <button
-        className={colorClassName + " " + buttonClassName}
+        className={buttonClassName + " " + colorClassName}
         onClick={onClick}
       >
         {children}

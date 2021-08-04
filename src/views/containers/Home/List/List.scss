@@ -1,5 +1,4 @@
-$blue: #81c4de;
-$border-bottom: 1px solid #dedede;
+@import "../../../../styles/variables";
 
 @mixin flex-list($direction: column) {
   display: flex;
@@ -17,7 +16,7 @@ $border-bottom: 1px solid #dedede;
   }
 
   &__title {
-    color: $blue;
+    color: map-get($color, "blue");
   }
 
   &__body {

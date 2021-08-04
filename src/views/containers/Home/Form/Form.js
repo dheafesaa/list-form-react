@@ -1,27 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Button from "../../../components/Widgets/Button/Button";
 import Popup from "../../../components/Widgets/Modal/Modal";
+import TextInput from "../../../components/Widgets/TextInput/TextInput";
 import "./Form.scss";
 
 const Form = (props) => {
-  const { addList, currentList, updateList, editing, setEditing, togglePopup } = props;
+  const { addList, currentList, updateList, editing, setEditing } = props;
 
   const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    var obj = document.getElementsByClassName("modal")[0];
-    document.addEventListener("click", function (e) {
-      if (obj) {
-        if (obj.contains(e.target)) {
-          if (isOpen) {
-            setIsOpen(false);
-          }
-        } else {
-        }
-      }
-    });
-    return () => {};
-  }, [isOpen]);
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
 
   const initialFormState = {
     id: null,
@@ -62,41 +52,32 @@ const Form = (props) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="container">
-        <div>
-          <input
-            type="text"
-            name="title"
-            placeholder="Title"
-            value={list.title}
-            onChange={handleInputChange}
-            className="input-data"
-          />
-        </div>
-        <div>
-          <input
-            type="number"
-            min="0"
-            name="quantity"
-            placeholder="Quantity"
-            value={list.quantity}
-            onChange={handleInputChange}
-            className="input-data"
-          />
-        </div>
-        <div>
-          <input
-            type="number"
-            min="0"
-            name="price"
-            placeholder="Price"
-            value={list.price}
-            onChange={handleInputChange}
-            className="input-data"
-          />
-        </div>
+      <div className="form__input">
+        <TextInput
+          type="text"
+          name="title"
+          placeholder="Title"
+          value={list.title}
+          onChange={handleInputChange}
+        />
+        <TextInput
+          type="number"
+          min="0"
+          name="quantity"
+          placeholder="Quantity"
+          value={list.quantity}
+          onChange={handleInputChange}
+        />
+        <TextInput
+          type="number"
+          min="0"
+          name="price"
+          placeholder="Price"
+          value={list.price}
+          onChange={handleInputChange}
+        />
         {editing ? (
-          <div className="action-container">
+          <div className="form__update">
             <Button color="BLUE" type="UPDATE">
               Update
             </Button>
@@ -105,15 +86,15 @@ const Form = (props) => {
             </Button>
           </div>
         ) : (
-          <div>
-            <Button color="BLUE" type="SUBMIT" onClick={togglePopup}>
+          <div className="form__submit">
+            <Button color="BLUE" type="SUBMIT">
               Submit
             </Button>
             {isOpen && (
-              <Popup title="Error!">
+              <Popup title="Error!" close={togglePopup}>
                 <>
                   <p>Please fill out this field.</p>
-                  <button className="closebtn" onClick={togglePopup}>
+                  <button className="modal__close" onClick={togglePopup}>
                     x
                   </button>
                   <Button color="CHERRY" type="OKE">

@@ -1,22 +1,50 @@
-$white: #fff;
-$black: #000;
-$font-size: 20px;
-$border-radius: 5px;
-$padding: 10px 20px;
+@import "../../../../styles/variables";
 
-$color: (
-  "red": #d86969,
-  "dark-red": #a73737,
-  "blue": #81c4de,
-  "dark-blue": #3788a7,
-  "grey": #d3d3d3,
-  "dark-grey": #a9a9a9,
-  "cherry": #f44336,
-  "light": #ccc,
-  "dark-light": #a9a9a9,
-);
+@mixin form {
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  margin: 5px 0px;
+  padding: $padding;
+  font-size: $font-size - 5px;
+  border-radius: $border-radius;
+}
+
+@mixin button-pick {
+  border: none;
+  margin: 5px;
+  border-radius: $border-radius;
+}
 
 .btn {
+  &-submit {
+    @include form;
+    width: 100%;
+  }
+
+  &-update {
+    @include form;
+    width: 45%;
+  }
+
+  &-action {
+    @include button-pick;
+    width: 50%;
+    height: 50px;
+    font-size: $font-size;
+  }
+
+  &-oke {
+    @include button-pick;
+    height: 50px;
+    font-size: $font-size;
+  }
+
+  &-choose {
+    @include button-pick;
+    padding: $padding;
+  }
+
   &-red {
     background-color: map-get($color, "red");
     color: $white;
@@ -56,48 +84,4 @@ $color: (
       background-color: map-get($color, "dark-light");
     }
   }
-}
-
-@mixin form {
-  cursor: pointer;
-  text-align: center;
-  border: none;
-  margin: 5px 0px;
-  padding: $padding;
-  font-size: $font-size - 5px;
-  border-radius: $border-radius;
-}
-
-@mixin button-pick {
-  border: none;
-  margin: 5px;
-  border-radius: $border-radius;
-}
-
-.submit {
-  @include form;
-  width: 100%;
-}
-
-.update {
-  @include form;
-  width: 45%;
-}
-
-.action {
-  @include button-pick;
-  width: 50%;
-  height: 50px;
-  font-size: $font-size;
-}
-
-.oke {
-  @include button-pick;
-  height: 50px;
-  font-size: $font-size;
-}
-
-.choose {
-  @include button-pick;
-  padding: $padding;
 }
