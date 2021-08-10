@@ -1,13 +1,8 @@
 @import "../../../../styles/variables";
 
-@mixin flex-form($flex-direction: column) {
-  display: flex;
-  flex-direction: $flex-direction;
-}
-
 input[type="text"],
 input[type="number"] {
-  @include flex-form;
+  @include flex-style;
   box-sizing: border-box;
   outline: none;
   width: 100%;

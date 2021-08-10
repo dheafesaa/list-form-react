@@ -1,6 +1,6 @@
+@import "../../../styles/variables";
+
 .footer {
-  display: flex;
-  flex-direction: column;
+  @include flex-style;
   text-align: center;
-  justify-content: center;
 }

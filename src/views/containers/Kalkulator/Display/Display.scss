@@ -1,0 +1,27 @@
+@import "../../../../styles/variables";
+
+.calculator {
+  @include flex-style;
+  background: $dark-tosca;
+  margin: 8em auto 3em auto;
+  height: 600px;
+  width: 390px;
+  box-shadow: 0 0 4px rgba(250, 244, 244, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+  position: relative;
+
+  &__output {
+    @include flex-style($direction: row);
+    background-color: $white;
+    height: 200px;
+    width: 100%;
+  }
+
+  &__answer {
+    word-wrap: break-word;
+    text-align: right;
+    border: 0;
+    width: 390px;
+    color: $black;
+    font-size: 3.5em;
+  }
+}

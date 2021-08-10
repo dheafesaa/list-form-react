@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Footer from "../../components/Footer/Footer";
-import Form from "./Form/Form";
 import Header from "../../components/Header/Header";
+import Form from "./Form/Form";
 import List from "./List/List";
 
 const Home = () => {
@@ -17,12 +17,19 @@ const Home = () => {
   const [editing, setEditing] = useState(false);
 
   const addList = (list) => {
-    list.id = lists.length + 1;
+    list.id = `${lists.length + 1}${Math.floor(Math.random() * 100000)}`;
     setLists([...lists, list]);
   };
 
   const deleteList = (id) => {
-    setLists(lists.filter((list) => list.id !== id));
+    console.log(id);
+    console.log(lists);
+
+    const newList = lists.filter((list) => {
+      console.log(list.id);
+      return Number(list.id) !== Number(id);
+    });
+    setLists(newList);
   };
 
   const updateList = (id, updateList) => {

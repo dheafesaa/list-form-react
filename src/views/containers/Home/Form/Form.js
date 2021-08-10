@@ -5,7 +5,7 @@ import TextInput from "../../../components/Widgets/TextInput/TextInput";
 import "./Form.scss";
 
 const Form = (props) => {
-  const { addList, currentList, updateList, editing, setEditing } = props;
+  const { addList, currentList, updateList, editing } = props;
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -47,7 +47,7 @@ const Form = (props) => {
   };
 
   const handleReset = () => {
-    setEditing(initialFormState);
+    setList(false);
   };
 
   return (

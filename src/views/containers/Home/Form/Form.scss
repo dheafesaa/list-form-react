@@ -1,13 +1,8 @@
 @import "../../../../styles/variables";
 
-@mixin flex-form($flex-direction: column) {
-  display: flex;
-  flex-direction: $flex-direction;
-}
-
 .form {
   &__input {
-    @include flex-form;
+    @include flex-style;
     margin: auto;
     width: 65%;
     padding: 20px;
@@ -16,7 +11,6 @@
   }
 
   &__update {
-    @include flex-form(row);
-    justify-content: space-between;
+    @include flex-style(space-between, row);
   }
 }

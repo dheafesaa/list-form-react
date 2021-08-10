@@ -6,12 +6,11 @@ const Popup = (props) => {
 
   return (
     <div className="modal">
-      <div className="modal__background" onClick={close}>
-        <div className="modal__box">
-          <div className="modal__content">
-            <h3>{title}</h3>
-            {children}
-          </div>
+      <div className="modal__background" onClick={close} />
+      <div className="modal__box">
+        <div className="modal__content">
+          <h3>{title}</h3>
+          {children}
         </div>
       </div>
     </div>

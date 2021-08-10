@@ -1,0 +1,48 @@
+@import "../../../../styles/variables";
+
+.calculator {
+  &__body {
+    @include flex-style($content: flex-end);
+
+    button {
+      border: 0;
+      padding: 0;
+      width: 100px;
+      height: 100px;
+      font-size: $font-size + 12px;
+      background: none;
+    }
+  }
+
+  &__side-menu {
+    @include flex-style;
+    position: absolute; 
+    background-color: $tosca;
+    right: 0;    
+
+    button {
+      font-size: $font-size + 10px;
+      height: 66px;
+
+      &:last-child {
+        height: 70px;
+      }
+    }
+
+    &:active,
+    :hover {
+      background: $dark-tosca;
+    }
+  }
+
+  &__main {
+    height: 400px;
+    width: 300px;
+    background-color: #0097a7;
+
+    &:active,
+    :hover {
+      background: $dark-tosca;
+    }
+  }
+}

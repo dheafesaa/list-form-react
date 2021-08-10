@@ -1,18 +1,13 @@
 @import "../../../../styles/variables";
 
-@mixin flex-list($direction: column) {
-  display: flex;
-  flex-direction: $direction;
-}
-
 .list {
-  @include flex-list;
+  @include flex-style;
   padding-left: 1rem;
   padding-right: 1rem;
   margin-bottom: 1rem;
 
   &__head {
-    @include flex-list;
+    @include flex-style;
   }
 
   &__title {
@@ -20,20 +15,19 @@
   }
 
   &__body {
-    @include flex-list;
+    @include flex-style;
     width: 100%;
   }
 
   &__data {
-    @include flex-list(row);
-    justify-content: space-between;
+    @include flex-style(space-between, row);
     align-items: center;
     padding: 0.5rem;
     border-bottom: $border-bottom;
   }
 
   &__empty {
-    @include flex-list;
+    @include flex-style;
     border-bottom: $border-bottom;
   }
 }
