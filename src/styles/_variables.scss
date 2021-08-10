@@ -1,6 +1,14 @@
+@mixin flex-style ($content: center, $direction: column) {
+  display: flex;
+  justify-content: $content;
+  flex-direction: $direction;
+}
+
 $white: #fff;
 $black: #000;
 $misty: #f6f6f6;
+$tosca: #00bcd4;
+$dark-tosca: #00838f;
 
 $font-size: 20px;
 $border-radius: 5px;
