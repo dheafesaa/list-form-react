@@ -1,0 +1,37 @@
+@import "../../../../styles/variables";
+
+.calculator {
+  &__key {
+    display: flex;
+
+    &-operators {
+      @include flex-style;
+      position: absolute;
+      right: 0;
+      height: 400px;
+      width: 90px;
+      background-color: $pink;
+
+      button {
+        @include key-btn;
+        height: 80px;
+        width: 100%;
+        background-color: $pink;
+      }
+    }
+
+    &-digits {
+      @include flex-style($direction: row);
+      flex-wrap: wrap-reverse;
+      height: 400px;
+      width: 300px;
+
+      button {
+        @include key-btn;
+        width: 100px;
+        height: 100px;
+        background-color: $dark;
+      }
+    }
+  }
+}
