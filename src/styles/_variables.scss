@@ -1,14 +1,28 @@
-@mixin flex-style ($content: center, $direction: column) {
+@mixin flex-style($content: center, $direction: column) {
   display: flex;
   justify-content: $content;
   flex-direction: $direction;
 }
 
+@mixin key-btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.4s;
+  color: $white;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
 $white: #fff;
 $black: #000;
 $misty: #f6f6f6;
-$tosca: #00bcd4;
-$dark-tosca: #00838f;
+$pink: #d81e5b;
+$dark: #131a26;
+$silver: #888;
 
 $font-size: 20px;
 $border-radius: 5px;
