@@ -6,6 +6,11 @@
   padding-right: 1rem;
   margin-bottom: 1rem;
 
+  &__search {
+    @include input-data(30%);
+    margin-top: 35px
+  }
+
   &__head {
     @include flex-style;
   }

@@ -5,7 +5,7 @@ const TextInput = (props) => {
   const { ...rest } = props;
 
   return (
-    <div className="form__input--list">
+    <div className="text__input">
       <input {...rest} />
     </div>
   );

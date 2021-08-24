@@ -17,6 +17,19 @@
   }
 }
 
+@mixin input-data($width: 100%) {
+  box-sizing: border-box;
+  outline: none;
+  width: $width;
+  padding: 12px 10px;
+  font-size: $font-size - 5px;
+  border: 1px solid map-get($color, "blue");
+  border-radius: $border-radius;
+  &:focus {
+    border-color: map-get($color, "dark-blue");
+  }
+}
+
 $white: #fff;
 $black: #000;
 $misty: #f6f6f6;

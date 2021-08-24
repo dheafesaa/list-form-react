@@ -20,7 +20,7 @@ const Calculator = () => {
   };
 
   const calculate = () => {
-    setCalc(eval(calc).toString());
+    setCalc("");
   };
 
   const clearAll = () => {

@@ -3,15 +3,6 @@
 input[type="text"],
 input[type="number"] {
   @include flex-style;
-  box-sizing: border-box;
-  outline: none;
-  width: 100%;
-  padding: 12px 10px;
+  @include input-data;
   margin: 5px 0px;
-  font-size: 15px;
-  border: 1px solid map-get($color, "blue");
-  border-radius: $border-radius;
-  &:focus {
-    border-color: map-get($color, "dark-blue");
-  }
 }

@@ -6,8 +6,8 @@ const Display = (props) => {
 
   return (
     <div className="calculator__display">
-      <div className="calculator__display-input">{operation || 0}</div>
-      <div className="calculator__display-result">{status ? status : ""}</div>
+      <div className="calculator__display-input">{operation}</div>
+      <div className="calculator__display-result">{status}</div>
     </div>
   );
 };
