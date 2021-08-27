@@ -5,22 +5,31 @@ import KeyPad from "./KeyPad/KeyPad";
 const Calculator = () => {
   const [calc, setCalc] = useState("");
   const [result, setResult] = useState("");
+  const [final, setFinal] = useState("")
 
   const ops = ["/", "*", "-", "+", "."];
 
   const updateCalc = (value) => {
-    if (ops.includes(value) && (calc === "" || ops.includes(calc.slice(-1)))) {
+    var calcx = calc
+    if (final == "done") {
+      setCalc("");
+      setResult("");
+      setFinal("")
+      calcx = ""
+    }
+    if (ops.includes(value) && (calcx === "" || ops.includes(calcx.slice(-1)))) {
       return;
     }
-    setCalc(calc + value);
+    setCalc(calcx + value);
 
     if (!ops.includes(value)) {
-      setResult(eval(calc + value).toString());
+      setResult(eval(calcx + value).toString());
     }
   };
 
   const calculate = () => {
-    setCalc("");
+    setCalc(eval(calc).toString());
+    setFinal("done")
   };
 
   const clearAll = () => {
