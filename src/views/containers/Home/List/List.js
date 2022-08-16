@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import ListItem from "./ListItem/ListItem";
 import TextInput from "../../../components/Widgets/TextInput/TextInput";
 import "./List.scss";
@@ -9,8 +9,8 @@ const List = (props) => {
   const [filterStr, setfilterStr] = useState("");
 
   const handleFilter = (e) => {
-    setfilterStr(e.target.value)
-  }
+    setfilterStr(e.target.value);
+  };
 
   return (
     <div className="list">
@@ -24,12 +24,19 @@ const List = (props) => {
       </div>
       <div className="list__body">
         {lists.length > 0 ? (
-          lists.filter(filterlist => filterlist
-            .title
-            .toLowerCase()
-            .includes(filterStr.toLocaleLowerCase()))
+          lists
+            .filter((filterlist) =>
+              filterlist.title
+                .toLowerCase()
+                .includes(filterStr.toLocaleLowerCase())
+            )
             .map((list) => (
-              <ListItem list={list} deleteList={deleteList} editRow={editRow} />
+              <ListItem
+                key={list.id}
+                list={list}
+                deleteList={deleteList}
+                editRow={editRow}
+              />
             ))
         ) : (
           <div className="list__empty">List is empty.</div>
