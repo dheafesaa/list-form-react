@@ -1,14 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
-import Home from "./views/containers/Home/Home";
-import Calculator from "./views/containers/Kalkulator/Calculator";
+import Home from "./Home";
 import "./index.scss";
 
 ReactDOM.render(
   <React.StrictMode>
     <Home />
-    <Calculator />
   </React.StrictMode>,
   document.getElementById("root")
 );

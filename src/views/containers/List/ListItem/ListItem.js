@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Popup from "../../../../components/Widgets/Modal/Modal";
-import Button from "../../../../components/Widgets/Button/Button";
+import Popup from "../../../components/Widgets/Modal/Modal";
+import Button from "../../../components/Widgets/Button/Button";
 import "./ListItem.scss";
 
 const ListItem = (props) => {

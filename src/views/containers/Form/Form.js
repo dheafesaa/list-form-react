@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Button from "../../../components/Widgets/Button/Button";
-import Popup from "../../../components/Widgets/Modal/Modal";
-import TextInput from "../../../components/Widgets/TextInput/TextInput";
+import Button from "../../components/Widgets/Button/Button";
+import Popup from "../../components/Widgets/Modal/Modal";
+import TextInput from "../../components/Widgets/TextInput/TextInput";
 import "./Form.scss";
 
 const Form = (props) => {

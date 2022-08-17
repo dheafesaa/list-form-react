@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ListItem from "./ListItem/ListItem";
-import TextInput from "../../../components/Widgets/TextInput/TextInput";
+import TextInput from "../../components/Widgets/TextInput/TextInput";
 import "./List.scss";
 
 const List = (props) => {
